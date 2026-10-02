@@ -93,13 +93,13 @@
   <section id="how" class="section">
     <div class="section-head">
       <p class="kicker">How booking works</p>
-      <h2>From first message to framed print.</h2>
+      <h2>From first message to final photos.</h2>
     </div>
     <ol class="steps">
       <li><span class="step-no">1</span><h3>Check your date</h3><p>Message with your date, location and package. Dates fill fast, especially in wedding season.</p></li>
       <li><span class="step-no">2</span><h3>Secure it</h3><p>An 80% deposit confirms your date. We agree the looks, the location and the running order before the day.</p></li>
       <li><span class="step-no">3</span><h3>The shoot</h3><p>The remaining 20% is due on the day. Then we shoot, unhurried, with time built in for every outfit change.</p></li>
-      <li><span class="step-no">4</span><h3>Delivery</h3><p>Soft copies in 3&nbsp;weeks. Photobooks and framed prints within 30 working days of the balance.</p></li>
+      <li><span class="step-no">4</span><h3>Delivery</h3><p>Soft copies in 3&nbsp;weeks. Photobooks within 30 working days of the balance.</p></li>
     </ol>
   </section>
 
@@ -112,7 +112,7 @@
       <div class="faq">
         <details><summary>How do the deposit and balance work?</summary><p>A minimum 80% deposit is required before your date is confirmed. The remaining 20% is due on the day of the session.</p></details>
         <details><summary>When do I get my photos?</summary><p>Soft copies are delivered within 3 weeks of the session.</p></details>
-        <details><summary>When do prints arrive?</summary><p>All photobooks and framed prints are produced within 30 working days after the balance is settled.</p></details>
+        <details><summary>When do prints arrive?</summary><p>All photobooks are produced within 30 working days after the balance is settled.</p></details>
         <details><summary>How do outfit changes work?</summary><p>Allow 10–15 minutes for each change. That time is factored into the session, so there is no rush between looks.</p></details>
         <details><summary>Where does the session happen?</summary><p>Studio sessions take place in the photographer's studio. Outdoor sessions happen at a location agreed in advance. Travel outside the primary area is charged separately.</p></details>
         <details><summary>What if we need to cancel or change the date?</summary><p>Deposits are non-refundable but transferable to a new date with at least 14 days' notice.</p></details>
@@ -149,29 +149,27 @@ const COMMON = ["<strong>1 photographer</strong>","Studio or outdoor","Relaxed d
 const PACKAGES = {
   p1:{no:"Package 1", name:"The Prelude", price:200000, who:"1 outfit", delivery:"3 weeks",
       tagline:"One look, one location. Simple and intentional.",
-      gets:COMMON.concat(["<strong>1 outfit</strong>","<strong>10 edited photos</strong>","Online gallery for download","Flash drive delivery"]),
-      specs:[["Outfits","1"],["Edited photos","10"],["Location","Studio or outdoor"],["Soft copies","Within 3 weeks"],["Prints","Add any from the add-ons"]]},
+      gets:COMMON.concat(["<strong>1 outfit</strong>","<strong>5 edited photos</strong>","Online gallery for download","Flash drive delivery"]),
+      specs:[["Outfits","1"],["Edited photos","5"],["Location","Studio or outdoor"],["Soft copies","Within 3 weeks"],["Prints","Add any from the add-ons"]]},
   p2:{no:"Package 2", name:"The Promise", price:350000, who:"2 outfits", delivery:"3 weeks", badge:"Most popular",
       tagline:"Two looks, more range to tell your story.",
-      gets:COMMON.concat(["<strong>2 outfits</strong>","<strong>18 edited photos</strong>","Online gallery for download","Flash drive delivery"]),
-      specs:[["Outfits","2"],["Edited photos","18"],["Location","Studio or outdoor"],["Soft copies","Within 3 weeks"],["Prints","Add any from the add-ons"]]},
-  p3:{no:"Package 3", name:"Forever Begins", price:450000, who:"3 outfits", delivery:"3 weeks", badge:"With prints", soft:true,
-      tagline:"Three looks, fully told, with a keepsake to hold onto.",
-      value:"Includes a medium photobook worth ₦120,000.",
-      gets:COMMON.concat(["<strong>3 outfits</strong>","<strong>24 edited photos</strong>","Medium photobook","Online gallery + flash drive"]),
-      specs:[["Outfits","3"],["Edited photos","24"],["Location","Studio or outdoor"],["Soft copies","Within 3 weeks"],["Prints","Within 30 working days of the balance"]]}
+      gets:COMMON.concat(["<strong>2 outfits</strong>","<strong>10 edited photos</strong>","Online gallery for download","Flash drive delivery"]),
+      specs:[["Outfits","2"],["Edited photos","10"],["Location","Studio or outdoor"],["Soft copies","Within 3 weeks"],["Prints","Add any from the add-ons"]]},
+  p3:{no:"Package 3", name:"Forever Begins", price:500000, who:"3 outfits", delivery:"3 weeks", badge:"Most looks", soft:true,
+      tagline:"Three looks, the whole story fully told.",
+      gets:COMMON.concat(["<strong>3 outfits</strong>","<strong>15 edited photos</strong>","Online gallery for download","Flash drive delivery"]),
+      specs:[["Outfits","3"],["Edited photos","15"],["Location","Studio or outdoor"],["Soft copies","Within 3 weeks"],["Prints","Add any from the add-ons"]]}
 };
 
 const ADDONS = [
   {group:"Photobooks", items:[
     {id:"pb-s", name:"Small photobook", note:"A keepsake for parents or for the two of you.", price:80000, type:"qty"},
-    {id:"pb-m", name:"Medium photobook", note:"The size most couples choose.", price:120000, type:"qty",
-     noteWhen:{pkg:"p3", text:"One already included. This adds a second."}},
+    {id:"pb-m", name:"Medium photobook", note:"The size most couples choose.", price:120000, type:"qty"},
     {id:"pb-l", name:"Large photobook", note:"The full session, printed large.", price:150000, type:"qty"}]},
   {group:"Your session", items:[
     {id:"set", name:"Customised set", note:"A styled backdrop or concept setup built around your vision.", price:100000, type:"toggle"},
     {id:"xp", name:"Extra edited photos", note:"Beyond the photo count in your package.", price:20000, type:"qty", max:30},
-    {id:"xo", name:"Extra outfit on the day", note:"Decided during the session. Extra outfits booked in advance are quoted per package. Ask when you message.", price:200000, type:"info"}]}
+    {id:"xo", name:"Extra outfit", note:"Per additional look, on any package. Ask when you message.", price:250000, type:"info"}]}
 ];
 
 Lumiere.renderTiers({

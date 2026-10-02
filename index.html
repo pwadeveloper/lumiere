@@ -75,7 +75,7 @@
         </div>
         <div class="sum-total">
           <p class="label">Estimated total</p>
-          <p class="big" id="sumTotal">₦750,000</p>
+          <p class="big" id="sumTotal">₦800,000</p>
         </div>
         <div class="collapsible">
           <dl class="pay">
@@ -115,7 +115,7 @@
         <details><summary>What if we need to cancel or change the date?</summary><p>Deposits are non-refundable but transferable to a new date with at least 30 days’ notice. Changes within 30 days depend on availability. If the photographer can’t fulfil the booking, your deposit is refunded in full.</p></details>
         <details><summary>Do you shoot outside your area?</summary><p>Yes. For weddings outside the primary area, you cover transport and accommodation, confirmed in writing before the shoot.</p></details>
         <details><summary>Can we add more coverage hours?</summary><p>Yes, arranged in advance at an extra charge.</p></details>
-        <details><summary>What’s in the couples portrait session?</summary><p>The Love Story includes a 45-minute uninterrupted session. Happily Ever After includes 90 minutes, plus a complimentary pre-wedding shoot that doesn’t reduce the package price.</p></details>
+        <details><summary>What’s in the couples portrait session?</summary><p>The Love Story includes a 45-minute uninterrupted session. Happily Ever After includes 90 minutes, plus a complimentary one-outfit pre-wedding shoot at no extra cost.</p></details>
         <details><summary>Will you post our photos?</summary><p>Selected images may be shared on social platforms unless you say otherwise in the Client Details Form.</p></details>
       </div>
     </div>
@@ -148,14 +148,14 @@ const PACKAGES = {
       value:null,
       gets:["<strong>1 photographer</strong> from the Lumière by Bee team","1 light assistant","Up to <strong>4 hours</strong> coverage","Fully edited digital photos","Online gallery for download","Flash drive delivery"],
       specs:[["Who shoots","Trained Lumière by Bee team, fully briefed"],["Coverage","Up to 4 hours"],["Portraits","Covered within the day"],["Soft copies","Within 3 weeks"],["Prints","Add any from the add-ons"]]},
-  p2:{no:"Package 2", name:"The Love Story", price:750000, who:"Lead photographer, start to finish", delivery:"3 weeks", badge:"Most popular",
-      value:"Includes a medium photobook and a large framed print, worth ₦300,000 as add-ons.",
-      gets:["<strong>Lead photographer</strong> on site, start to finish","Full team + 1 light assistant","<strong>45-min</strong> couples portrait session","Up to <strong>6 hours</strong> coverage","Medium photobook","One large framed print","Fully edited digital photos","Online gallery + flash drive"],
+  p2:{no:"Package 2", name:"The Love Story", price:800000, who:"Lead photographer, start to finish", delivery:"3 weeks", badge:"Most popular",
+      comp:[["Medium photobook",200000]],
+      gets:["<strong>Lead photographer</strong> on site, start to finish","Full team + 1 light assistant","<strong>45-min</strong> couples portrait session","Up to <strong>6 hours</strong> coverage","Medium photobook","Fully edited digital photos","Online gallery + flash drive"],
       specs:[["Who shoots","Lead photographer, with full team support"],["Coverage","Up to 6 hours"],["Portraits","45 minutes, uninterrupted"],["Soft copies","Within 3 weeks"],["Prints","Within 30 working days of the balance"]]},
   p3:{no:"Package 3", name:"Happily Ever After", price:1200000, who:"Lead photographer + second shooter", delivery:"2 weeks", badge:"Complete", soft:true,
-      value:"Includes ₦630,000 of add-ons: second shooter, studio backdrop, a large photobook and a large framed print.",
-      gets:["<strong>Lead photographer + second shooter</strong>","Full team + 2 light assistants","<strong>90-min</strong> couples portrait session","Up to <strong>8 hours</strong> coverage","Studio backdrop setup","Complimentary pre-wedding shoot","One large photobook","One large framed print","Fully edited digital photos","Online gallery + flash drive"],
-      specs:[["Who shoots","Lead photographer and a second shooter"],["Coverage","Up to 8 hours"],["Portraits","90 minutes, plus a pre-wedding shoot"],["Soft copies","Within 2 weeks"],["Prints","Within 30 working days of the balance"]]}
+      comp:[["Second shooter",200000],["Studio backdrop setup",80000],["Large photobook",250000],["One-outfit pre-wedding shoot",200000]],
+      gets:["<strong>Lead photographer + second shooter</strong>","Full team + 2 light assistants","<strong>90-min</strong> couples portrait session","Up to <strong>8 hours</strong> coverage","Studio backdrop setup","Complimentary <strong>one-outfit</strong> pre-wedding shoot","One large photobook","Fully edited digital photos","Online gallery + flash drive"],
+      specs:[["Who shoots","Lead photographer and a second shooter"],["Coverage","Up to 8 hours"],["Portraits","90 minutes, plus a one-outfit pre-wedding shoot"],["Soft copies","Within 2 weeks"],["Prints","Within 30 working days of the balance"]]}
 };
 
 const INCLUDED_IN_P3 = "Already in Happily Ever After.";

@@ -10,6 +10,16 @@ const CAMERA = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stro
 
 const el = s => typeof s === "string" ? document.querySelector(s) : s;
 
+/* Items given free with a package, each shown with what it would cost as an add-on. */
+function compBlock(items){
+  const total = items.reduce((t, [, v]) => t + v, 0);
+  return `<div class="tier-comp">
+    <p class="comp-head"><span>Complimentary</span><span class="comp-worth">worth ${naira(total)}</span></p>
+    <ul class="comp-list">${items.map(([n,v]) =>
+      `<li><span>${n}</span><span class="comp-val"><s>${naira(v)}</s> Free</span></li>`).join("")}</ul>
+  </div>`;
+}
+
 /* ---------- Tier cards ---------- */
 
 function tierCard(key, p, cfg){
@@ -26,6 +36,7 @@ function tierCard(key, p, cfg){
       <p class="tier-unit">${cfg.unit(p)}</p>
       ${p.tagline ? `<p class="tier-tag">${p.tagline}</p>` : ""}
       ${p.value ? `<p class="tier-value">${p.value}</p>` : ""}
+      ${p.comp ? compBlock(p.comp) : ""}
     </div>
     <div class="tier-body">
       <p class="gets-head">You get</p>

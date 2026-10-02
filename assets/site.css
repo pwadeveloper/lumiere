@@ -209,6 +209,13 @@ footer .wordmark{font-size:22px;display:block;margin-bottom:6px}
 }
 
 /* Tier tagline — pre-wedding and portraits rate cards carry a descriptive line */
+.tier-comp{margin-top:var(--s2);padding:12px 14px;border-radius:10px;background:rgba(212,169,54,.08);border:1px solid var(--line)}
+.comp-head{display:flex;justify-content:space-between;align-items:baseline;gap:var(--s1);flex-wrap:wrap;margin-bottom:8px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:var(--fw-semibold);color:var(--gold)}
+.comp-worth{letter-spacing:normal;text-transform:none;font-weight:var(--fw-regular);font-size:13px;color:var(--ink-soft)}
+.comp-list{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:14px;line-height:1.35;color:var(--ivory)}
+.comp-list li{display:flex;justify-content:space-between;align-items:baseline;gap:var(--s2)}
+.comp-val{flex:none;font-weight:var(--fw-medium);color:var(--gold-soft)}
+.comp-val s{margin-right:4px;font-weight:var(--fw-regular);color:var(--muted)}
 .tier-tag{margin-top:var(--s2);font-size:14px;line-height:1.45;color:var(--ink-soft);text-wrap:pretty}
 
 /* Two-up segmented control (portraits Personal/Family) */
