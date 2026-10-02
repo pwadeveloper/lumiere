@@ -116,7 +116,9 @@ const WA = "2349077771605";
 const naira = Lumiere.naira;
 
 const PERSONAL_COMMON = ["<strong>1 photographer</strong>","Studio or outdoor","Relaxed direction throughout"];
-const FAMILY_COMMON   = ["<strong>1 photographer</strong>","Studio or outdoor","Guided prompts, not stiff poses"];
+/* Outfits, group size and photo count lead, so all three show before "See everything included". */
+const family = (outfits, people, photos, extra = []) =>
+  ["<strong>1 photographer</strong>", outfits, people, photos, "Studio or outdoor", "Guided prompts, not stiff poses"].concat(extra, TAIL);
 const TAIL = ["Online gallery + flash drive"];
 
 const PERSONAL = {
@@ -137,15 +139,15 @@ const PERSONAL = {
 const FAMILY = {
   p1:{no:"Package 1", name:"The Bond", price:150000, who:"1 outfit · up to 4 people", delivery:"3 weeks",
       tagline:"One coordinated look. Warm and real.",
-      gets:FAMILY_COMMON.concat(["<strong>1 outfit</strong>","Up to <strong>4 people</strong>","<strong>7 edited photos</strong>"]).concat(TAIL),
+      gets:family("<strong>1 outfit</strong>","Up to <strong>4 people</strong>","<strong>7 edited photos</strong>"),
       specs:[["Outfits","1"],["Group size","Up to 4 people"],["Edited photos","7"],["Location","Studio or outdoor"],["Soft copies","Within 3 weeks"],["Extra outfit","₦150,000 each"]]},
   p2:{no:"Package 2", name:"The Family Edit", price:250000, who:"2 outfits · up to 5 people", delivery:"3 weeks",
       tagline:"Two looks, formal and relaxed.",
-      gets:FAMILY_COMMON.concat(["<strong>2 outfits</strong>","Up to <strong>5 people</strong>","<strong>14 edited photos</strong>"]).concat(TAIL),
+      gets:family("<strong>2 outfits</strong>","Up to <strong>5 people</strong>","<strong>14 edited photos</strong>"),
       specs:[["Outfits","2"],["Group size","Up to 5 people"],["Edited photos","14"],["Location","Studio or outdoor"],["Soft copies","Within 3 weeks"],["Extra outfit","₦150,000 each"]]},
   p3:{no:"Package 3", name:"The Full Story", price:350000, who:"3 outfits · up to 6 people", delivery:"3 weeks", badge:"With photobook", soft:true,
       tagline:"Three looks, the most complete session.",
-      gets:FAMILY_COMMON.concat(["<strong>3 outfits</strong>","Up to <strong>6 people</strong>","<strong>21 edited photos</strong>","12×24 photobook"]).concat(TAIL),
+      gets:family("<strong>3 outfits</strong>","Up to <strong>6 people</strong>","<strong>21 edited photos</strong>",["12×24 photobook"]),
       specs:[["Outfits","3"],["Group size","Up to 6 people"],["Edited photos","21"],["Prints","12×24 photobook"],["Soft copies","Within 3 weeks"],["Extra outfit","₦150,000 each"]]}
 };
 
